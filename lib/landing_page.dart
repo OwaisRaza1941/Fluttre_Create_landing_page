@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:landing_page/components/home_class_function.dart';
+import 'package:landing_page/register_page.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
@@ -49,10 +50,27 @@ class LandingPage extends StatelessWidget {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.home),
+              leading: Icon(Icons.home, color: Colors.blueGrey),
               title: Text('Home'),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LandingPage()),
+                );
+              },
             ),
+            SizedBox(height: 15),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text('Account'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => RegisterPage()),
+                );
+              },
+            ),
+            SizedBox(height: 15),
             ListTile(
               leading: Icon(Icons.settings),
               title: Text('Settings'),
